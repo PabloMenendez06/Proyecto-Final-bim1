@@ -1,10 +1,15 @@
-import mongoose from "mongoose";
+import { Schema, model } from "mongoose";
 
-const UserSchema = new mongoose.Schema({
+const UserSchema = new Schema({
     name: {
         type: String,
         required: [true, "Name is required"],
-        trim: true
+        maxLength: [25, "Can't exceed 25 characters"]
+    },
+    username: {
+        type: String,
+        unique: true,
+        required: [true, "Username is required"]
     },
     email: {
         type: String,
@@ -15,17 +20,29 @@ const UserSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: [true, "Password is required"]
+        required: [true, "Password is required"],
+        minLength: [8, "Password must be at least 8 characters long"]
     },
     role: {
         type: String,
+        required: true,
         enum: ["ADMIN", "CLIENT"],
         default: "CLIENT"
     },
-    createdAt: {
-        type: Date,
-        default: Date.now
+    status: {
+        type: Boolean,
+        default: true
     }
+}, {
+    timestamps: true,
+    versionKey: false
 });
 
-export default mongoose.model("User", UserSchema);
+// Remove sensitive data when returning user object
+UserSchema.methods.toJSON = function () {
+    const { __v, password, _id, ...user } = this.toObject();
+    user.uid = _id;
+    return user;
+};
+
+export default model('User', UserSchema);
