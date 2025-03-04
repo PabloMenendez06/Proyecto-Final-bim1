@@ -1,33 +1,49 @@
-import mongoose from "mongoose";
+import { Schema, model } from "mongoose";
 
-const ProductSchema = new mongoose.Schema({
+const ProductSchema = Schema({
     name: {
         type: String,
         required: [true, "Product name is required"],
-        trim: true
+        maxLength: [70, "Can't exceed 70 characters"],
     },
     description: {
         type: String,
-        required: [true, "Product description is required"]
+        required: true,
+        maxLength: [700, "Can't exceed 700 characters"],
     },
     price: {
         type: Number,
-        required: [true, "Product price is required"]
+        required: [true, "Price is required"],
+        min: [0, "Price must be a positive number"],
     },
     stock: {
         type: Number,
-        required: [true, "Stock quantity is required"],
-        min: [0, "Stock cannot be negative"]
+        required: [true, "Stock is required"],
+        min: [0, "Stock cannot be negative"],
     },
     category: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Category",
-        required: [true, "Product category is required"]
+        type: Schema.Types.ObjectId,
+        ref: 'Category',
+        required: true,
     },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    }
+    sold: {
+        type: Number,
+        default: 0,
+    },
+    estado: {
+        type: Boolean,
+        default: true,  
+    },
+}, {
+    timestamps: true,  
+    versionKey: false,  
 });
 
-export default mongoose.model("Product", ProductSchema);
+
+ProductSchema.methods.toJSON = function () {
+    const { __v, _id, ...product } = this.toObject();
+    product.uid = _id;
+    return product;
+};
+
+export default model('Product', ProductSchema);
