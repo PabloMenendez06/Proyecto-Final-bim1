@@ -1,51 +1,89 @@
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
-import User from "../users/user.model.js";
+import User from '../users/user.model.js';
+import { hash, verify } from 'argon2';
+import { generarJWT } from '../helpers/generate-jwt.js';
 
-export const register = async (req, res) => {
+export const login = async (req, res) => {
+    const { email, password, username } = req.body;
+
     try {
-        const { name, username, email, password } = req.body;
+        const lowerEmail = email ? email.toLowerCase() : null;
+        const lowerUsername = username ? username.toLowerCase() : null;
 
+        const user = await User.findOne({
+            $or: [{ email: lowerEmail }, { username: lowerUsername }]
+        });
 
-        const existingUser = await User.findOne({ $or: [{ email }, { username }] });
-        if (existingUser) {
-            return res.status(400).json({ message: "Email or Username is already in use" });
+        if (!user) {
+            return res.status(400).json({
+                success: false,
+                msg: 'Incorrect credentials, user not found'
+            });
         }
 
+        if (!user.estado) {
+            return res.status(400).json({
+                success: false,
+                msg: 'User is inactive'
+            });
+        }
 
-        const salt = bcrypt.genSaltSync(10);
-        const hashedPassword = bcrypt.hashSync(password, salt);
+        const validPassword = await verify(user.password, password);
+        if (!validPassword) {
+            return res.status(400).json({
+                success: false,
+                msg: 'Incorrect password'
+            });
+        }
 
+        const token = await generarJWT(user.id);
 
-        const newUser = new User({ name, username, email, password: hashedPassword });
-        await newUser.save();
+        return res.status(200).json({
+            success: true,
+            msg: 'Login successful',
+            userDetails: {
+                username: user.username,
+                token: token,
+            }
+        });
 
-        res.status(201).json({ message: "User registered successfully" });
-    } catch (error) {
-        res.status(500).json({ message: "Server error", error });
+    } catch (e) {
+        console.log(e);
+        return res.status(500).json({
+            success: false,
+            msg: 'Server error',
+            error: e.message
+        });
     }
 };
 
-export const login = async (req, res) => {
+export const register = async (req, res) => {
     try {
-        const { identifier, password } = req.body; 
+        const { name, surname, username, email, password } = req.body;
 
+        const encryptedPassword = await hash(password);
 
-        const user = await User.findOne({ $or: [{ email: identifier }, { username: identifier }] });
-        if (!user) {
-            return res.status(400).json({ message: "Invalid username/email or password" });
-        }
+        const user = await User.create({
+            name,
+            surname,
+            username,
+            email,
+            password: encryptedPassword
+        });
 
-        const isMatch = bcrypt.compareSync(password, user.password);
-        if (!isMatch) {
-            return res.status(400).json({ message: "Invalid username/email or password" });
-        }
+        return res.status(201).json({
+            success: true,
+            msg: 'User registered successfully',
+            userDetails: {
+                user: user.email
+            }
+        });
 
-
-        const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: "1h" });
-
-        res.json({ message: "Login successful", token });
     } catch (error) {
-        res.status(500).json({ message: "Server error", error });
+        console.log(error);
+        return res.status(500).json({
+            success: false,
+            msg: 'Error registering user',
+            error: error.message
+        });
     }
 };
