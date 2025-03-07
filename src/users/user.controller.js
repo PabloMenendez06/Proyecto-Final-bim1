@@ -1,4 +1,5 @@
 import User from "./user.model.js";
+import argon2 from "argon2";
 
 export const getUsers = async (req, res) => {
     try {
@@ -47,16 +48,55 @@ export const updateUser = async (req, res) => {
 
 export const deleteUser = async (req, res) => {
     try {
-        const { id } = req.params;
+        const userId = req.user.id;
+        const { password } = req.body;
 
-        const deletedUser = await User.findByIdAndDelete(id);
 
-        if (!deletedUser) {
-            return res.status(404).json({ message: "User not found" });
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(404).json({ success: false, msg: "User not found" });
         }
 
-        res.json({ message: "User deleted successfully" });
+
+        const validPassword = await argon2.verify(user.password, password);
+
+        if (!validPassword) {
+            return res.status(400).json({ success: false, msg: "Incorrect password" });
+        }
+
+        user.estado = false;
+        await user.save();
+
+        res.json({ success: true, msg: "User account deactivated", user });
     } catch (error) {
-        res.status(500).json({ message: "Error deleting user", error });
+        res.status(500).json({ success: false, msg: "Error deactivating user account", error });
     }
 };
+
+
+
+export const updateUserRole = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { role } = req.body;
+
+        if (!["ADMIN", "CLIENT"].includes(role)) {
+            return res.status(400).json({ msg: "Invalid role. Allowed roles: ADMIN, CLIENT" });
+        }
+
+        const updatedUser = await User.findByIdAndUpdate(
+            id,
+            { role },
+            { new: true }
+        );
+
+        if (!updatedUser) {
+            return res.status(404).json({ msg: "User not found" });
+        }
+
+        res.json({ success: true, msg: "User role updated", updatedUser });
+    } catch (error) {
+        res.status(500).json({ msg: "Error updating user role", error });
+    }
+};
+
