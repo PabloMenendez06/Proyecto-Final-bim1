@@ -12,6 +12,7 @@ import categoryRoutes from "../src/category/category.routes.js";
 import productRoutes from "../src/product/product.routes.js";
 import cartRoutes from "../src/cart/cart.routes.js";
 import orderRoutes from "../src/order/order.routes.js";
+import invoiceRoutes from "../src/invoice/invoice.routes.js";
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false }));
@@ -29,6 +30,7 @@ const routes = (app) => {
     app.use("/Proyecto-Final/v1/product", productRoutes);
     app.use("/Proyecto-Final/v1/cart", cartRoutes);
     app.use("/Proyecto-Final/v1/order", orderRoutes);
+    app.use("/Proyecto-Final/v1/invoice", invoiceRoutes);
 };
 
 const conectarDB = async () => {

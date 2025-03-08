@@ -9,8 +9,6 @@ export const validarJWT = async (req, res, next) => {
     }
     try {
         const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
-
-
         const usuario = await Usuario.findById(uid);
 
         if (!usuario) {
@@ -21,7 +19,8 @@ export const validarJWT = async (req, res, next) => {
             return res.status(401).json({ msg: "Invalid token - User with status: false" });
         }
 
-        req.user = usuario; 
+        req.user = usuario;
+        req.user.id = usuario._id.toString();
 
         next();
     } catch (e) {
