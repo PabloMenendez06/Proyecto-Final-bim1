@@ -9,6 +9,7 @@ import {
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validarJWT } from "../middlewares/validar-jwt.js";
 import { tieneRole } from "../middlewares/validar-role.js";
+import { getUserOrderHistory } from "./order.controller.js";
 
 const router = Router();
 
@@ -29,5 +30,7 @@ router.put(
     ],
     updateOrderStatus
 );
+router.get("/history", validarJWT, getUserOrderHistory);
+
 
 export default router;

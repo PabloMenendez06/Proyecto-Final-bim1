@@ -1,6 +1,7 @@
 import Order from "./order.model.js";
 import Cart from "../cart/cart.model.js";
 import Product from "../product/product.model.js";
+import Invoice from "../invoice/invoice.model.js";
 
 export const createOrder = async (req, res) => {
     try {
@@ -43,7 +44,20 @@ export const createOrder = async (req, res) => {
         cart.products = [];
         await cart.save();
 
-        res.status(201).json({ success: true, msg: "Order created successfully", order: newOrder });
+        const newInvoice = new Invoice({
+            user: userId,
+            order: newOrder._id,
+            totalPrice: newOrder.totalPrice
+        });
+
+        await newInvoice.save();
+
+        res.status(201).json({
+            success: true,
+            msg: "Order created successfully",
+            order: newOrder,
+            invoice: newInvoice 
+        });
     } catch (error) {
         res.status(500).json({ success: false, msg: "Error creating order", error });
     }
@@ -94,3 +108,21 @@ export const updateOrderStatus = async (req, res) => {
         res.status(500).json({ success: false, msg: "Error updating order status", error });
     }
 };
+
+export const getUserOrderHistory = async (req, res) => {
+    try {
+        const userId = req.user.id;
+        const orders = await Order.find({ user: userId })
+            .populate("products.product", "name price")
+            .sort({ createdAt: -1 });
+
+        if (orders.length === 0) {
+            return res.status(404).json({ success: false, msg: "No orders found" });
+        }
+
+        res.json({ success: true, orders });
+    } catch (error) {
+        res.status(500).json({ success: false, msg: "Error fetching order history", error });
+    }
+};
+
