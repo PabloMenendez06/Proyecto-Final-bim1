@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "67c9026f111bfc69b2c7eb2b"
+  },
+  "name": "Laptop Gamer PRO",
+  "description": "Laptop con procesador Intel i7 y RTX 3060",
+  "price": 1800,
+  "stock": 4,
+  "category": {
+    "$oid": "67c8f6c2b81626174c051c68"
+  },
+  "sold": 0,
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-03-06T02:03:27.151Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T22:28:56.173Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb62a554afe0318f01322f"
+  },
+  "name": "Refrigeradora",
+  "description": "Refrigeradora que congela xd",
+  "price": 3000,
+  "stock": 3,
+  "category": {
+    "$oid": "67c8f6c2b81626174c051c68"
+  },
+  "sold": 0,
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-03-07T21:18:29.033Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T21:19:48.589Z"
+  }
+}]

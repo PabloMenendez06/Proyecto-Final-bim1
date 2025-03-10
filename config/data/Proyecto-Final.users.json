@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "67c8f506b81626174c051c63"
+  },
+  "name": "Juan Pérez",
+  "surname": "Gómez",
+  "username": "juanperez",
+  "email": "juanperez@example.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$NAlWI9/2bQcIG2XRcDPG+Q$+siHbap2xjdgsc9QeaXehaAx38iSMDCWZ2KXDCI9AKE",
+  "role": "CLIENT",
+  "estado": false,
+  "createdAt": {
+    "$date": "2025-03-06T01:06:14.659Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T02:18:09.776Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c8f9b215c1374854531b85"
+  },
+  "name": "Admin",
+  "surname": "Admin1",
+  "username": "Admin2",
+  "email": "Admin@example.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$aauIwZXplaUUumPpxvb2mg$YlpUTfIKNyr+FtrPeiZFYSrRlRekWcWtTPYquIzhWVY",
+  "role": "ADMIN",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-03-06T01:26:10.475Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T02:01:13.416Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c8fd65c2db212bf5f5b1c6"
+  },
+  "name": "Nuevo Nombre",
+  "surname": "Nuevo Apellido",
+  "username": "nuevoUsername",
+  "email": "nuevoemail@example.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$8zvmPgK0EEOdmmIldnvBPw$/WI/Q10cFHQ+x/NvMvB+l20Nh8T3XfeCqFpuqVl+jD4",
+  "role": "ADMIN",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-03-06T01:41:58.002Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T21:56:20.134Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb61b554afe0318f013216"
+  },
+  "name": "Cristiano",
+  "surname": "Ronaldo",
+  "username": "cr7",
+  "email": "cr7@example.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$8vGjMEO881bGdgw8VKCPqg$pK7O8GSq+45JmLnQYdUijkYoxmPyvFbkgiJGWl6nmHY",
+  "role": "ADMIN",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-03-07T21:14:29.088Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T21:14:29.088Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb730b85d4268b1a006cb8"
+  },
+  "name": "Pablo",
+  "surname": "Menendez",
+  "username": "pablom",
+  "email": "pablom@example.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$jpkbExDx1p0e+94Y0Qkf9g$EaJHwC2Zex0vZ73sU7qhwuzyJHvDcSyus93D6Pn0rjg",
+  "role": "ADMIN",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-03-07T22:28:27.122Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T22:28:27.122Z"
+  }
+}]

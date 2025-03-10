@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "c88f9a88-dfaa-480b-95c1-e9e88f9b3b1b",
+		"name": "GET",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42619524"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/category",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/product/67c902c3111bfc69b2c7eb30",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/product/67c902c3111bfc69b2c7eb30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"product",
+						"67c902c3111bfc69b2c7eb30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/product/",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/product/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/cart",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjUwNmI4MTYyNjE3NGMwNTFjNjMiLCJpYXQiOjE3NDEyOTk0ODksImV4cCI6MTc0MTMwMzA4OX0.-sm9lWLv_6bCsdPCM-eqserBWkUaTbrbqEN4IvbVCVo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/order",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjUwNmI4MTYyNjE3NGMwNTFjNjMiLCJpYXQiOjE3NDEzMDk5MzAsImV4cCI6MTc0MTMxMzUzMH0.J5PuBdsgoExFVryGoamnDoC7DPNWCYc83oiUlVmg7hk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/order/all",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZmQ2NWMyZGIyMTJiZjVmNWIxYzYiLCJpYXQiOjE3NDEzMTAyNjgsImV4cCI6MTc0MTMxMzg2OH0.Y9I7I2UrlAp9UY_VJxYszABG8nvZKW1zGlkYDE0VLjA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/order/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"order",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/order/history",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiNjFiNTU0YWZlMDMxOGYwMTMyMTYiLCJpYXQiOjE3NDEzODIxMDEsImV4cCI6MTc0MTM4NTcwMX0.aUOhzNhuumQ7oNWWF9VLS6-8KFkwrttMNXiiETUVR6E",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/order/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"order",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/invoice",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiNzMwYjg1ZDQyNjhiMWEwMDZjYjgiLCJpYXQiOjE3NDEzODY1MDksImV4cCI6MTc0MTM5MDEwOX0.SbaLZawcwj-zh-cZDIH7mOBubuhaS_E4dnHfs-Bbr3Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/invoice",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"invoice"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

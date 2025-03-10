@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "fcec73a8-f7b7-4197-b719-2018061e836e",
+		"name": "PUT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42619524"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/product/67c9026f111bfc69b2c7eb2b",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZmQ2NWMyZGIyMTJiZjVmNWIxYzYiLCJpYXQiOjE3NDEyMjUzMzcsImV4cCI6MTc0MTIyODkzN30.6XqjgIqVlk1sq5ZiMVeVL8eG3zc84uNVWdjuBdHXoDw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Laptop Gamer PRO\",\r\n    \"price\": 1800\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/product/67c9026f111bfc69b2c7eb2b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"product",
+						"67c9026f111bfc69b2c7eb2b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/cart",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjUwNmI4MTYyNjE3NGMwNTFjNjMiLCJpYXQiOjE3NDEyOTk0ODksImV4cCI6MTc0MTMwMzA4OX0.-sm9lWLv_6bCsdPCM-eqserBWkUaTbrbqEN4IvbVCVo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": \"67c9026f111bfc69b2c7eb2b\",\r\n    \"quantity\": 5\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/order/67ca48737d902201999ac6e3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZmQ2NWMyZGIyMTJiZjVmNWIxYzYiLCJpYXQiOjE3NDEzMTAyNjgsImV4cCI6MTc0MTMxMzg2OH0.Y9I7I2UrlAp9UY_VJxYszABG8nvZKW1zGlkYDE0VLjA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"DELIVERED\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/order/67ca48737d902201999ac6e3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"order",
+						"67ca48737d902201999ac6e3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/users/67c8f9b215c1374854531b85/role",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZmQ2NWMyZGIyMTJiZjVmNWIxYzYiLCJpYXQiOjE3NDEzMTI4MzMsImV4cCI6MTc0MTMxNjQzM30.qiSGnec11CtryTqICO_hwl7l_puW0rEG1u1eH1GPFnE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"role\": \"ADMIN\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/users/67c8f9b215c1374854531b85/role",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"users",
+						"67c8f9b215c1374854531b85",
+						"role"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/users/me",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZmQ2NWMyZGIyMTJiZjVmNWIxYzYiLCJpYXQiOjE3NDEzODIyOTIsImV4cCI6MTc0MTM4NTg5Mn0.1Rj1WO3VmiokHkAbzXiCz74chuQE52YGTpMtsic-MQ8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Nuevo Nombre\",\r\n    \"surname\": \"Nuevo Apellido\",\r\n    \"email\": \"nuevoemail@example.com\",\r\n    \"username\": \"nuevoUsername\",\r\n    \"password\": \"123456789\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/users/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

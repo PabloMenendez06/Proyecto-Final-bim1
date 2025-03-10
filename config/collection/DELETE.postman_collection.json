@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "eeb8f655-935a-4020-8579-909ade9f4912",
+		"name": "DELETE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42619524"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/product/67c902c3111bfc69b2c7eb30",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZmQ2NWMyZGIyMTJiZjVmNWIxYzYiLCJpYXQiOjE3NDEyMjUzMzcsImV4cCI6MTc0MTIyODkzN30.6XqjgIqVlk1sq5ZiMVeVL8eG3zc84uNVWdjuBdHXoDw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/product/67c902c3111bfc69b2c7eb30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"product",
+						"67c902c3111bfc69b2c7eb30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/cart/67c9026f111bfc69b2c7eb2b",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjUwNmI4MTYyNjE3NGMwNTFjNjMiLCJpYXQiOjE3NDEyOTk0ODksImV4cCI6MTc0MTMwMzA4OX0.-sm9lWLv_6bCsdPCM-eqserBWkUaTbrbqEN4IvbVCVo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/cart/67c9026f111bfc69b2c7eb2b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"cart",
+						"67c9026f111bfc69b2c7eb2b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/cart",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjUwNmI4MTYyNjE3NGMwNTFjNjMiLCJpYXQiOjE3NDEyOTk0ODksImV4cCI6MTc0MTMwMzA4OX0.-sm9lWLv_6bCsdPCM-eqserBWkUaTbrbqEN4IvbVCVo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/users",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjUwNmI4MTYyNjE3NGMwNTFjNjMiLCJpYXQiOjE3NDEzMTM2MDgsImV4cCI6MTc0MTMxNzIwOH0.uhHmR8Z3Tqq5Ghuhkq5ywExf04nS8qaLpoU3y8z9lwc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

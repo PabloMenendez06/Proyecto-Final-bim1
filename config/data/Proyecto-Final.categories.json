@@ -1,0 +1,26 @@
+[{
+  "_id": {
+    "$oid": "67c8f6c2b81626174c051c68"
+  },
+  "name": "Electrónica",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-03-06T01:13:38.227Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T01:13:38.227Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c8f785b81626174c051c6b"
+  },
+  "name": "HOLaaaaaa",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-03-06T01:16:53.730Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T01:16:53.730Z"
+  }
+}]

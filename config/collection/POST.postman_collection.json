@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "e0d1c51e-323a-4213-a7ac-a66251a2f31f",
+		"name": "POST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42619524"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/auth/login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"pablom\",\r\n    \"password\": \"123456789\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/auth/register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pablo\",\r\n    \"surname\": \"Menendez\",\r\n    \"username\": \"pablom\",\r\n    \"email\": \"pablom@example.com\",\r\n    \"password\": \"123456789\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/category",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"HOLaaaaaa\"\r\n\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/product",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZmQ2NWMyZGIyMTJiZjVmNWIxYzYiLCJpYXQiOjE3NDEyMjUzMzcsImV4cCI6MTc0MTIyODkzN30.6XqjgIqVlk1sq5ZiMVeVL8eG3zc84uNVWdjuBdHXoDw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Refrigeradora\",\r\n    \"description\": \"Refrigeradora que congela xd\",\r\n    \"price\": 3000,\r\n    \"stock\": 5,\r\n    \"category\": \"67c8f6c2b81626174c051c68\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/cart",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiNzMwYjg1ZDQyNjhiMWEwMDZjYjgiLCJpYXQiOjE3NDEzODY1MDksImV4cCI6MTc0MTM5MDEwOX0.SbaLZawcwj-zh-cZDIH7mOBubuhaS_E4dnHfs-Bbr3Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": \"67c9026f111bfc69b2c7eb2b\",\r\n    \"quantity\": 2\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/Proyecto-Final/v1/order",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZjUwNmI4MTYyNjE3NGMwNTFjNjMiLCJpYXQiOjE3NDEzMDk5MzAsImV4cCI6MTc0MTMxMzUzMH0.J5PuBdsgoExFVryGoamnDoC7DPNWCYc83oiUlVmg7hk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/Proyecto-Final/v1/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"Proyecto-Final",
+						"v1",
+						"order"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
